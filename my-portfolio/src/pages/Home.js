@@ -38,6 +38,7 @@ function Home() {
     const [menuOpen, setMenuOpen] = useState(false);
     const [experienceOpen, setExperienceOpen] = useState(false);
     const [certificationsOpen, setCertificationsOpen] = useState(false);
+    const [itilOpen, setItilOpen] = useState(false);
 
     useEffect(() => {
         const fetchRepos = async () => {
@@ -170,6 +171,26 @@ function Home() {
                                         <span className="status-icon planned-icon">○</span>
                                         RHSA Certification Exam
                                         <span className="status-badge">Planned</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        )}
+                    </div>
+                    <div className="experience-card">
+                        <div className="experience-header" onClick={() => setItilOpen(!itilOpen)}>
+                            <div>
+                                <h3 className="experience-title">ITIL 4 Foundation</h3>
+                                <p className="experience-date">Completed</p>
+                            </div>
+                            <div className={`expand-icon ${itilOpen ? 'open' : ''}`}>▼</div>
+                        </div>
+                        {itilOpen && (
+                            <div className="experience-details">
+                                <ul className="certification-list">
+                                    <li className="completed">
+                                        <span className="status-icon">✓</span>
+                                        ITIL 4 Foundation
+                                        <a href="https://badges.peoplecert.org/Badge/en/2/9A5082EF-1761-4D9B-B6EF-30287CD3A781?393" target="_blank" rel="noopener noreferrer" className="status-badge verify-badge">Verify</a>
                                     </li>
                                 </ul>
                             </div>
